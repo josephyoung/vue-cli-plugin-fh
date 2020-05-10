@@ -1,9 +1,14 @@
 {
   "name": "vue-cli-plugin-fh",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "standard fiberhome vue project starter generator",
   "main": "index.js",
   "author": "J.Y.",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephyoung/vue-cli-plugin-fh.git"
+  },
+  "homepage": "https://github.com/josephyoung/vue-cli-plugin-fh.git#readme"
 }
