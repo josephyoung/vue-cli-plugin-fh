@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-fh",
   "version": "0.0.3",
-  "description": "standard fiberhome vue project starter generator",
+  "description": "A vue-cli 3.0 plugin, the standard fiberhome vue project generator",
   "main": "index.js",
   "author": "J.Y.",
   "license": "MIT",
