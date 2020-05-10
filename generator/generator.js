@@ -5,6 +5,7 @@ module.exports = (api, option, presets) => {
       lodash: '^4.17.15',
       axios: '^0.19.2',
       'element-ui': '^2.13.1',
+      qs: '^6.9.4',
     },
   });
 };

@@ -68,7 +68,13 @@
         },
         "browserslist": [
           "> 1%",
-          "not dead"
+          "last 2 versions",
+          "since 2016",
+          "edge >= 12",
+          "not ie <= 10",
+          "not dead",
+          "Android >= 4",
+          "iOs >= 8"
         ],
         "gitHooks": {
           "pre-commit": "lint-staged"
