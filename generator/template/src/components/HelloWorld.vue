@@ -1,5 +1,5 @@
 <template>
-  <div id="hello">
+  <div id="hello" @click="handleClick">
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -8,7 +8,16 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: {
+      type: String,
+      default: ''
+    }
+  },
+
+  methods: {
+    handleClick() {
+      this.$emit('click', 'Vue');
+    }
   }
 };
 </script>

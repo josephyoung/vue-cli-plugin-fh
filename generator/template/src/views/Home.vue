@@ -1,12 +1,16 @@
 <template>
   <div style="text-align: center;">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld :msg="sentence" @click="handleClick" />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld';
+// @ is an alias to /src
+import { createNamespacedHelpers } from 'vuex';
+import { HelloWorld } from '@/components';
+
+const { mapState, mapGetters, mapActions } = createNamespacedHelpers('example');
 
 export default {
   name: 'Home',
@@ -14,27 +18,18 @@ export default {
     HelloWorld
   },
 
-  methods: {
-    handleLogoClick() {
-      console.log({ 'html-version': document.documentElement.version });
-      function* gen() {
-        for (let i = 0; i < 10; i++) yield i;
-      }
-      const x = gen();
-      for (const i of x) {
-        console.info(`%c ${i}`, 'color: red;');
-      }
-      return Promise.resolve('yes i am');
-    }
+  computed: {
+    ...mapState(['message']),
+
+    ...mapGetters(['sentence'])
   },
 
-  mounted() {
-    const aa = { a: 1, b: 2, c: 3 };
-    for (const key in aa) {
-      if (aa.hasOwnProperty(key)) {
-        const element = aa[key];
-        console.log({ element });
-      }
+  methods: {
+    ...mapActions(['changeMessage']),
+
+    handleClick(subject) {
+      console.log(this.message);
+      this.changeMessage();
     }
   }
 };

@@ -1,30 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import routes from './routes';
+import registerInterceptor from './registerInterceptor';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-];
-
+// 全局唯一 VueRouter 实例
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes,
 });
+
+// 注册路由拦截器
+registerInterceptor(router);
 
 export default router;
