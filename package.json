@@ -5,7 +5,6 @@
   "main": "index.js",
   "author": "J.Y.",
   "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/josephyoung/vue-cli-plugin-fh.git"
